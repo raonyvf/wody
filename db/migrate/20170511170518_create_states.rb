@@ -4,7 +4,6 @@ class CreateStates < ActiveRecord::Migration[5.0]
       t.string :nome
       t.string :sigla
 
-      t.teste
     end
   end
 end

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filial:</strong>
+  <%= @gym.filial %>
+</p>
+
+<p>
+  <strong>Physical person:</strong>
+  <%= @gym.physical_person %>
+</p>
+
+<%= link_to 'Edit', edit_gym_path(@gym) %> |
+<%= link_to 'Back', gyms_path %>

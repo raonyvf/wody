@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Physical People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cnpj</th>
+      <th>Nome fantasia</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @physical_people.each do |physical_person| %>
+      <tr>
+        <td><%= physical_person.cnpj %></td>
+        <td><%= physical_person.nome_fantasia %></td>
+        <td><%= physical_person.person %></td>
+        <td><%= link_to 'Show', physical_person %></td>
+        <td><%= link_to 'Edit', edit_physical_person_path(physical_person) %></td>
+        <td><%= link_to 'Destroy', physical_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Physical Person', new_physical_person_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cnpj: MyString
+  nome_fantasia: MyString
+  person: one
+
+two:
+  cnpj: MyString
+  nome_fantasia: MyString
+  person: two

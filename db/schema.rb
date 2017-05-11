@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511172349) do
+ActiveRecord::Schema.define(version: 20170511185844) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "rua"
@@ -32,12 +32,29 @@ ActiveRecord::Schema.define(version: 20170511172349) do
     t.index ["state_id"], name: "index_cities_on_state_id", using: :btree
   end
 
+  create_table "gyms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "filial"
+    t.integer  "physical_person_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["physical_person_id"], name: "index_gyms_on_physical_person_id", using: :btree
+  end
+
   create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome"
     t.string   "telefone"
     t.string   "celular"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "physical_people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "cnpj"
+    t.string   "nome_fantasia"
+    t.integer  "person_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["person_id"], name: "index_physical_people_on_person_id", using: :btree
   end
 
   create_table "states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -48,4 +65,6 @@ ActiveRecord::Schema.define(version: 20170511172349) do
   add_foreign_key "addresses", "cities"
   add_foreign_key "addresses", "people"
   add_foreign_key "cities", "states"
+  add_foreign_key "gyms", "physical_people"
+  add_foreign_key "physical_people", "people"
 end
