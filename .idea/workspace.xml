@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d48d589-c0dd-48db-b4f3-7aaa152024ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20170511170518_create_states.rb" afterPath="$PROJECT_DIR$/db/migrate/20170511170518_create_states.rb" />
-    </list>
+    <list default="true" id="7d48d589-c0dd-48db-b4f3-7aaa152024ab" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -487,12 +485,12 @@
       <option name="presentableId" value="Default" />
       <updated>1494520493932</updated>
       <workItem from="1494520496206" duration="17000" />
-      <workItem from="1494520524690" duration="3835000" />
+      <workItem from="1494520524690" duration="3884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3852000" />
+    <option name="totallyTimeSpent" value="3901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1680" height="1023" extended-state="0" />
