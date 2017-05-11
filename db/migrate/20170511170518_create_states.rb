@@ -3,6 +3,8 @@ class CreateStates < ActiveRecord::Migration[5.0]
     create_table :states do |t|
       t.string :nome
       t.string :sigla
+
+      t.teste
     end
   end
 end
