@@ -11,17 +11,51 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :filial %>
-    <%= f.number_field :filial %>
-  </div>
 
-  <div class="field">
-    <%= f.label :physical_person_id %>
-    <%= f.text_field :physical_person_id %>
-  </div>
+    <div class="field">
+      <%= f.label :filial %>
+      <%= f.number_field :filial %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.hidden_field :physical_person_id %>
+    </div>
+
+       <%= f.fields_for :physical_person do |pp| %>
+        <div class="field">
+          <%= pp.label :cnpj %>
+          <%= pp.text_field :cnpj %>
+        </div>
+
+        <div class="field">
+          <%= pp.label :nome_fantasia %>
+          <%= pp.text_field :nome_fantasia %>
+        </div>
+
+        <div class="field">
+          <%= pp.hidden_field :person_id %>
+        </div>
+
+            <%= pp.fields_for :person do |p| %>
+                <div class="field">
+                  <%= p.label :nome %>
+                  <%= p.text_field :nome %>
+                </div>
+
+                <div class="field">
+                  <%= p.label :telefone %>
+                  <%= p.text_field :telefone %>
+                </div>
+
+                <div class="field">
+                  <%= p.label :celular %>
+                  <%= p.text_field :celular %>
+                </div>
+            <% end %>
+
+        <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

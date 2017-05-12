@@ -15,6 +15,7 @@ class GymsController < ApplicationController
   # GET /gyms/new
   def new
     @gym = Gym.new
+    @physical_person = @gym.build_physical_person
   end
 
   # GET /gyms/1/edit
@@ -25,7 +26,6 @@ class GymsController < ApplicationController
   # POST /gyms.json
   def create
     @gym = Gym.new(gym_params)
-
     respond_to do |format|
       if @gym.save
         format.html { redirect_to @gym, notice: 'Gym was successfully created.' }
@@ -69,6 +69,8 @@ class GymsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gym_params
-      params.require(:gym).permit(:filial, :physical_person_id)
+      params.require(:gym).permit(:filial, :physical_person_id,
+                                  physical_person_attributes: [:cnpj, :nome_fantasia, :person_id,
+                                                               person_attributes: [:nome, :telefone, :celular]])
     end
 end

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'city/edit'
+
+  get 'city/create'
+
+  get 'city/update'
+
+  get 'city/destroy'
+
   resources :gyms
   resources :physical_people
   resources :addresses
